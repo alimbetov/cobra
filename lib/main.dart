@@ -39,23 +39,21 @@ class _MainPageState extends State<MainPage> {
       body: Stack(
         children: [
           const Align(
-            alignment: Alignment(0, -0.9),
+            alignment: Alignment(0, -0.8),
             child: Text(
-              "Test your reaction speed",
+              "Test your",
               textAlign: TextAlign.center,
 
               style: TextStyle(
                   fontSize: 38,
-                  fontFamily: 'RobotoMono',
-                  fontWeight: FontWeight.bold,
-                  textBaseline: TextBaseline.alphabetic,
+                  fontWeight: FontWeight.w900,
                   color: Colors.white),
             ),
           ),
           Align(
             alignment: Alignment.center,
             child: ColoredBox(
-              color: Colors.grey,
+              color: Color(0xFF6D6D6D),
               child: SizedBox(
                 height: 160,
                 width: 300,
@@ -63,16 +61,16 @@ class _MainPageState extends State<MainPage> {
                   child: Text(
                     MillisecondsText,
                     style: TextStyle(
-                        fontSize: 38,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red),
+                        fontSize: 36,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
                   ),
                 ),
               ),
             ),
           ),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment(0, 0.8),
             child: GestureDetector(
               onTap: () => setState(() {
                 switch (gameSate) {
@@ -99,8 +97,8 @@ class _MainPageState extends State<MainPage> {
                       _getButtonText(),
                       style: TextStyle(
                           fontSize: 38,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueAccent),
+                          fontWeight: FontWeight.w900,
+                          color: Color(0xffffffff)),
                     ),
                   ),
                 ),
@@ -120,6 +118,7 @@ class _MainPageState extends State<MainPage> {
         return "WAIT";
       case GameSate.canbeStopped:
         return "STOP";
+
     }
   }
   Color _getGameSateColor() {
@@ -130,6 +129,7 @@ class _MainPageState extends State<MainPage> {
         return Color(0xFFE0982D);
       case GameSate.canbeStopped:
         return Color(0xFFE02D47);
+
     }
   }
   void _startWaitingTimer() {
